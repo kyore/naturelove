@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="row" id="row">
+        <div class="col-sm-4">
+            <div class="title">
+                <h2 class="text-secondary"><img src="https://img.icons8.com/color/48/000000/deciduous-tree.png">Category
+                </h2>
+            </div>
+
+            <div class="category-accordion">
+                {% for cat in categories %}
+                    <button class="accordion">{{ cat }}</button>
+                    <div class="panel">
+                        <ul class="list-unstyled text-small border-top categories">
+                            {% for child in cat.children.all %}
+                                <li>
+                                    <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
+                                </li>
+                            {% empty %}
+                                <li>No subcategory in here.</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-sm-8 product-detail">
+            <div>
+                <ul class="list-inline inline-nav">
+                    <li class="list-inline-item"><a href="/">Home &raquo;</a></li>
+                    <li class="list-inline-item">
+                        <a href="{% url 'category:detail' product.category.parent.slug %}">
+                            {{ product.category.parent }} &raquo;</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{% url 'category:sub-detail' product.category.parent.slug product.category.slug %}">
+                            {{ product.category }} &raquo;</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a class="link-dark" href="#">
+                            {{ product.title }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    {% thumbnail object.thumbnail "250x150" crop="center" as img %}
+                        <img class="card-img-top" src="{{ img.url }}" width="{{ img.width }}"
+                             height="{{ img.height }}">
+                    {% endthumbnail %}
+                </div>
+                <div class="col-md-7">
+                    <h4 class="text-green">{{ object.title }}</h4>
+                    <h5 class="f-300"><i
+                            class="fa fa-tags text-green"></i><span
+                            id="product-price">Үнэ: {{ product.price|intcomma }}</span></h5>
+
+                    <div class="order">
+                        <label>
+                            <input type="number" class="form-control" name="order" value="1" min="0" max="50">
+                        </label>
+                        <button type="button" class="btn btn-success">Захиалах</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator--solid"></div>
+
+            <div class="row">
+                {% for image in product.images.all %}
+                    <img src="/media/{{ image.image }}" class="product-images">
+                    <div class="separator--solid"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'layouts/brand_list.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            var formatter = Intl.NumberFormat('mn', {
+                minimumFractionDigits: 2
+            });
+
+            let acc = document.getElementsByClassName("accordion");
+            let productPrice = $('#product-price');
+            let productFirstPrice = parseInt("{{ product.price }}");
+
+            let order = $('input[name=order]');
+
+            order.bind('keyup mouseup', function () {
+                productPrice.html("Үнэ: " + formatter.format(productFirstPrice * $(this).val()));
+            });
+
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    let panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        });
+
+    </script>
+{% endblock %}

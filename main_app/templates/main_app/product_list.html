@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="row" id="row">
+        <div class="col-sm-4">
+            <div class="title">
+                <h2 class="text-secondary">
+                    <img src="{% static 'fonts/img/Tree.png' %}" style="padding-right: 10px;" height="40">
+                    Special Product
+                </h2>
+            </div>
+
+            <div class="category-accordion">
+                {% for cat in categories %}
+                    <button class="accordion">{{ cat }}</button>
+                    <div class="panel">
+                        <ul class="list-unstyled text-small border-top categories">
+                            {% for child in cat.children.all %}
+                                <li>
+                                    <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
+                                </li>
+                            {% empty %}
+                                <li>No subcategory in here.</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-sm-8 product-detail">
+            <div>
+                <ul class="list-inline inline-nav">
+                    <li class="list-inline-item"><a href="/">Home &raquo;</a></li>
+                    <li class="list-inline-item"><a href="{% url 'shop' %}">Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                {% for product in object_list %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            {% thumbnail product.thumbnail "200x150" crop="center" as img %}
+                                <img class="card-img-top" src="{{ img.url }}" width="{{ img.width }}"
+                                     height="{{ img.height }}">
+                            {% endthumbnail %}
+                            <div class="card-body">
+                                <h6><a href="{% url 'product-detail' product.id %}"
+                                       class="link-dark">{{ product.title }}</a></h6>
+                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">begin</span>
+                            </a>
+                        </li>   {% endif %}
+
+                    {% for n in page_obj.paginator.page_range %}
+                        {% if page_obj.number == n %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+                            </li>
+                        {% elif n > page_obj.number|add:'-3' and n < page_obj.number|add:'3' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">end</span>
+                            </a>
+                        </li>
+                    {% endif %}   </ul>
+            </nav>
+        </div>
+    </div>
+    {% include 'layouts/brand_list.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            let acc = document.getElementsByClassName("accordion");
+
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    let panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        });
+
+    </script>
+{% endblock %}

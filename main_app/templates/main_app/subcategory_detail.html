@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="row" id="row">
+        <div class="col-sm-4">
+            <div class="title">
+                <h2 class="text-secondary"><img src="https://img.icons8.com/color/48/000000/deciduous-tree.png">Category
+                </h2>
+            </div>
+
+            <div class="category-accordion">
+                {% for cat in categories %}
+                    <button class="accordion">{{ cat }}</button>
+                    <div class="panel" id="{{ cat }}">
+                        <ul class="list-unstyled text-small border-top categories">
+                            {% for child in cat.children.all %}
+                                <li>
+                                    <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}"
+                                       class="cat-link">{{ child }}</a>
+                                </li>
+                            {% empty %}
+                                <li>No subcategory in here.</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-sm-8 product-detail">
+            <div>
+                <ul class="list-inline inline-nav">
+                    <li class="list-inline-item"><a href="/">Home &raquo;</a></li>
+                    <li class="list-inline-item">
+                        <a href="{% url 'category:detail' object.parent.slug %}">
+                            {{ object.parent }} &raquo;</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{% url 'category:sub-detail' object.parent.slug object.slug %}">
+                            {{ object }} &raquo;</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                {% for product in object.products.all %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            {% thumbnail product.thumbnail "200x150" crop="center" as img %}
+                                <img class="card-img-top" src="{{ img.url }}" width="{{ img.width }}"
+                                     height="{{ img.height }}">
+                            {% endthumbnail %}
+                            <div class="card-body">
+                                <h6><a href="{% url 'product-detail' product.id %}"
+                                       class="link-dark">{{ product.title }}</a></h6>
+                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'layouts/brand_list.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            let acc = $('.accordion');
+            let parent = "{{ object.parent }}";
+            let currentCat = "{{ object }}";
+
+            $(`.cat-link:contains("${currentCat}")`).addClass('link-active');
+
+            let select_panel = document.getElementById(parent);
+            if (select_panel.style.maxHeight) {
+                select_panel.style.maxHeight = null;
+            } else {
+                select_panel.style.maxHeight = select_panel.scrollHeight + "px";
+            }
+
+            acc.each(function () {
+                $(this).on('click', function () {
+                    this.classList.toggle('active');
+                    let panel = this.nextElementSibling;
+
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                })
+            });
+
+        });
+
+    </script>
+{% endblock %}
