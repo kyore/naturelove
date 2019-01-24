@@ -11,7 +11,7 @@ from colorfield.fields import ColorField
 class Category(models.Model):
     name = models.CharField(max_length=80)
     slug = models.SlugField(editable=False, null=False)
-    color = ColorField(default="#ffffff")
+    visible = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = 'Категори'
@@ -76,6 +76,7 @@ class ProductImage(models.Model):
 
 class Slide(models.Model):
     image = models.ImageField(upload_to='slides/')
+    maromere = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Слайд'

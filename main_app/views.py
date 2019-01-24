@@ -27,10 +27,19 @@ class CategoryDetailView(generic.DetailView):
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
 
+    def get_template_names(self):
+        if self.object.name == 'Maro mere':
+            return ['maromere.html']
+        else:
+            return ['main_app/category_detail.html']
+
     def get_context_data(self, **kwargs):
         context = super(CategoryDetailView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
 
+        if self.object.name == 'Maro mere':
+            context['products'] = Product.objects.filter(category__name='maromere')
+            context['slides'] = Slide.objects.filter(maromere=True)
+        context['categories'] = Category.objects.all()
         return context
 
 

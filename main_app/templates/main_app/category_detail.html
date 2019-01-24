@@ -12,18 +12,22 @@
 
             <div class="category-accordion">
                 {% for cat in categories %}
-                    <button class="accordion">{{ cat }}</button>
-                    <div class="panel">
-                        <ul class="list-unstyled text-small border-top categories">
-                            {% for child in cat.children.all %}
-                                <li>
-                                    <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
-                                </li>
-                            {% empty %}
-                                <li>No subcategory in here.</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                    {% if cat.visible %}
+                        <button class="accordion">{{ cat }}</button>
+                        <div class="panel">
+                            <ul class="list-unstyled text-small border-top categories">
+                                {% for child in cat.children.all %}
+                                    <li>
+                                        <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
+                                    </li>
+                                {% empty %}
+                                    <li>No subcategory in here.</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% else %}
+                        <a class="accordion-a" href="{% url 'category:detail' cat.slug %}">{{ cat }}</a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -54,6 +58,11 @@
                             </div>
                         </div>
                     </div>
+                {% empty %}
+                    <p style="text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    color: #7c4b161c;">Coming soon</p>
                 {% endfor %}
             </div>
         </div>
@@ -65,7 +74,6 @@
     <script>
         $(document).ready(function () {
             let acc = document.getElementsByClassName("accordion");
-
             for (let i = 0; i < acc.length; i++) {
                 acc[i].addEventListener("click", function () {
                     this.classList.toggle("active");
@@ -78,6 +86,5 @@
                 });
             }
         });
-
     </script>
 {% endblock %}
