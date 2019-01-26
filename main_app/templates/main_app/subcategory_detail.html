@@ -5,33 +5,7 @@
 {% block content %}
     <div class="row" id="row">
         <div class="col-sm-4">
-            <div class="title">
-                <h2 class="text-secondary"><img src="https://img.icons8.com/color/48/000000/deciduous-tree.png">Category
-                </h2>
-            </div>
-
-            <div class="category-accordion">
-                {% for cat in categories %}
-                    {% if cat.visible %}
-                        <button class="accordion">{{ cat }}</button>
-                        <div class="panel" id="{{ cat }}">
-                            <ul class="list-unstyled text-small border-top categories">
-                                {% for child in cat.children.all %}
-                                    <li>
-                                        <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}"
-                                           class="cat-link">{{ child }}</a>
-                                    </li>
-                                {% empty %}
-                                    <li>No subcategory in here.</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% else %}
-                        <a class="accordion-a" href="{% url 'category:detail' cat.slug %}">{{ cat }}</a>
-                    {% endif %}
-
-                {% endfor %}
-            </div>
+            {% include 'layouts/category_sidebar.html' %}
         </div>
 
         <div class="col-sm-8 product-detail">
@@ -74,33 +48,18 @@
 {% block scripts %}
     <script>
         $(document).ready(function () {
-            let acc = $('.accordion');
             let parent = "{{ object.parent }}";
             let currentCat = "{{ object }}";
 
             $(`.cat-link:contains("${currentCat}")`).addClass('link-active');
 
             let select_panel = document.getElementById(parent);
+
             if (select_panel.style.maxHeight) {
                 select_panel.style.maxHeight = null;
             } else {
                 select_panel.style.maxHeight = select_panel.scrollHeight + "px";
             }
-
-            acc.each(function () {
-                $(this).on('click', function () {
-                    this.classList.toggle('active');
-                    let panel = this.nextElementSibling;
-
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                })
-            });
-
         });
-
     </script>
 {% endblock %}

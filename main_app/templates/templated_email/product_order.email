@@ -1,0 +1,15 @@
+{% block subject %} Шинээр захиалга ирлээ {% endblock %}
+
+{% block html %}
+    <p><strong>{{ product.title }}</strong>: нэртэй бүтээгдэхүүнд шинээр захиалга ирсэн байна.</p>
+
+
+    <p>Захиалгын дэлгэрэнгүй: </p>
+        <dl>
+        <dt>Захиалагч: <b>{{ phone_number }}</b></dt>
+        <dt>Бүтээгдэхүүний үнэ: {{ product.price }}</dt>
+        <dt>Ширхэг: {{ order_count }}</dt>
+        <dt>Нийт үнэ: {{ total_cost }}</dt>
+        <dt>Холбоос: <a href="{{ link }}">{{ link }}</a></dt>
+        </dl>
+{% endblock %}

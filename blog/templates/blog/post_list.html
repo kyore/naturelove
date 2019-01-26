@@ -7,29 +7,7 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-4">
-            <div class="title">
-                <h2 class="text-secondary">
-                    <img src="{% static 'fonts/img/Tree.png' %}" style="padding-right: 10px;" height="40">
-                    Special Product
-                </h2>
-            </div>
-
-            <div class="category-accordion">
-                {% for cat in categories %}
-                    <button class="accordion">{{ cat }}</button>
-                    <div class="panel">
-                        <ul class="list-unstyled text-small border-top categories">
-                            {% for child in cat.children.all %}
-                                <li>
-                                    <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
-                                </li>
-                            {% empty %}
-                                <li>No subcategory in here.</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endfor %}
-            </div>
+            {% include "layouts/category_sidebar.html" with name="Special Products" %}
         </div>
 
         <div class="col-sm-8 product-detail">
@@ -90,25 +68,4 @@
         </div>
     </div>
     {% include 'layouts/brand_list.html' %}
-{% endblock %}
-
-{% block scripts %}
-    <script>
-        $(document).ready(function () {
-            let acc = document.getElementsByClassName("accordion");
-
-            for (let i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    let panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                });
-            }
-        });
-
-    </script>
 {% endblock %}

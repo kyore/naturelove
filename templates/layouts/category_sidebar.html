@@ -1,0 +1,28 @@
+{% load static %}
+<div class="title">
+    <h2 class="text-secondary">
+        <img src="{% static 'fonts/img/Tree.png' %}" style="padding-right: 10px;" height="40">
+        {{ name|default:"Category" }}
+    </h2>
+</div>
+<div class="category-accordion">
+    {% for cat in categories %}
+        {% if cat.visible %}
+            <button class="accordion">{{ cat }}</button>
+            <div class="panel" id="{{ cat }}">
+                <ul class="list-unstyled text-small border-top categories">
+                    {% for child in cat.children.all %}
+                        <li>
+                            <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}"
+                               class="cat-link">{{ child }}</a>
+                        </li>
+                    {% empty %}
+                        <li>Coming soon.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <a class="accordion-a" href="{% url 'category:detail' cat.slug %}">{{ cat }}</a>
+        {% endif %}
+    {% endfor %}
+</div>

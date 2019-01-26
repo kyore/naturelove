@@ -89,6 +89,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Emails
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'telmuun'
+EMAIL_HOST_PASSWORD = 'gh8ys9cl23'
+EMAIL_USE_TLS = True
+
+TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 

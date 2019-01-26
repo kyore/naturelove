@@ -11,6 +11,7 @@ from colorfield.fields import ColorField
 class Category(models.Model):
     name = models.CharField(max_length=80)
     slug = models.SlugField(editable=False, null=False)
+    color = ColorField(default='#ffffff')
     visible = models.BooleanField(default=True)
 
     class Meta:
@@ -33,6 +34,7 @@ class SubCategory(models.Model):
     class Meta:
         verbose_name = 'Дэд категори'
         verbose_name_plural = 'Дэд категори'
+        ordering = ['id']
 
     def __str__(self):
         return self.name
@@ -54,9 +56,14 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Бүтээгдэхүүн'
         verbose_name_plural = 'Бүтээгдэхүүнүүд'
+        ordering = ['-id']
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('product-detail', args=[str(self.id)])
 
     def save(self, *args, **kwargs):
         super(Product, self).save(*args, **kwargs)

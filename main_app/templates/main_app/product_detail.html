@@ -2,34 +2,15 @@
 {% load humanize %}
 {% load thumbnail %}
 
+{% block styles %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css">
+{% endblock %}
+
 {% block content %}
     <div class="row" id="row">
         <div class="col-sm-4">
-            <div class="title">
-                <h2 class="text-secondary"><img src="https://img.icons8.com/color/48/000000/deciduous-tree.png">Category
-                </h2>
-            </div>
-
-            <div class="category-accordion">
-                {% for cat in categories %}
-                    {% if cat.visible %}
-                        <button class="accordion">{{ cat }}</button>
-                        <div class="panel">
-                            <ul class="list-unstyled text-small border-top categories">
-                                {% for child in cat.children.all %}
-                                    <li>
-                                        <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
-                                    </li>
-                                {% empty %}
-                                    <li>No subcategory in here.</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% else %}
-                        <a class="accordion-a" href="{% url 'category:detail' cat.slug %}">{{ cat }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
+            {% include 'layouts/category_sidebar.html' %}
         </div>
 
         <div class="col-sm-8 product-detail">
@@ -64,13 +45,15 @@
                     <h4 class="text-green">{{ object.title }}</h4>
                     <h5 class="f-300"><i
                             class="fa fa-tags text-green"></i><span
-                            id="product-price">Үнэ: {{ product.price|intcomma }}</span></h5>
+                            id="product-price">Үнэ: {{ product.price|intcomma:False }}</span></h5>
 
                     <div class="order">
                         <label>
                             <input type="number" class="form-control" name="order" value="1" min="0" max="50">
                         </label>
-                        <button type="button" class="btn btn-success">Захиалах</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#orderModal">
+                            Захиалах
+                        </button>
                     </div>
                 </div>
             </div>
@@ -85,37 +68,112 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog"
+         aria-labelledby="orderModalTitle" aria-hidden="true" data-label="{% url 'category:send-email' object.id %}">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Захиалга илгээх</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <header>
+                        <h1>Таны захиалга <br>амжилттай бүртгэгдлээ !</h1>
+                        <h3>ЗАХИАЛГЫН ДҮН. <span
+                                style="color: #76871a; font-weight: bold" id="order_price"></span>
+                        </h3>
+                        <div class="product_image">
+                            <img src="/media/{{ object.thumbnail }}">
+                        </div>
+                    </header>
+
+                    <div class="description-text">
+                        <p>Төлбөр төлөгдсөний дараа таны захиалга идэвхжихийг анхаарна уу! Төлбөрийг доорх дансанд
+                            шилжүүлэх ба <span style="color: red;font-size: 15px; font-weight: bold">утасны дугаарыг гүйлгээний утга дээр бичнэ үү.</span>
+                        </p>
+
+                        <div class="text-center my-md-5 my-sm-3">Асууж, лавлах зүйл байвал 9006-1661 дугаараас авна
+                            уу.
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <div class="order-information">
+                            <h3>Хүлээн авагч: Nature Love</h3>
+                            <h3>ХААН БАНК: 5131052590</h3>
+                            <h3>ГҮЙЛГЭЭНИЙ УТГА: УТАСНЫ ДУГААР</h3>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center" style="margin-top: 20px">
+                        <div class="col-md-4 mb-3">
+                            <label for="orderPhoneNumber">Утасны дугаар</label>
+                            <input type="number" class="form-control" id="orderPhoneNumber" placeholder="Утасны дугаар"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+
+                {% csrf_token %}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Гарах</button>
+                    <button type="button" class="btn btn-primary" id="orderSend">Илгээх</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% include 'layouts/brand_list.html' %}
 {% endblock %}
 
 {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
     <script>
         $(document).ready(function () {
             var formatter = Intl.NumberFormat('mn', {
-                minimumFractionDigits: 2
+                minimumFractionDigits: 0
             });
 
-            let acc = document.getElementsByClassName("accordion");
             let productPrice = $('#product-price');
             let productFirstPrice = parseInt("{{ product.price }}");
 
             let order = $('input[name=order]');
 
             order.bind('keyup mouseup', function () {
-                productPrice.html("Үнэ: " + formatter.format(productFirstPrice * $(this).val()));
+                let price = formatter.format(productFirstPrice * $(this).val()) + ' ₮';
+                $('#order_price').html(price);
+                productPrice.html("Үнэ: " + price);
             });
 
-            for (let i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    let panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                });
-            }
+            let orderSendBtn = $('#orderSend');
+            let phoneNumber = $('#orderPhoneNumber');
+
+            let url = $('#orderModal').attr('data-label');
+
+            orderSendBtn.on('click', function () {
+                if (phoneNumber.val() === '') {
+                    phoneNumber.focus()
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: {
+                            'order_count': order.val(),
+                            'phone_number': phoneNumber.val(),
+                            csrfmiddlewaretoken: '{{ csrf_token }}'
+                        },
+                        success: function (response) {
+                            $('#orderModal').modal('hide');
+                            $.notify('Таны захиалга ажилттай илгээгдлээ.', { showProgressbar: true });
+                        },
+                    });
+                }
+            });
         });
 
     </script>

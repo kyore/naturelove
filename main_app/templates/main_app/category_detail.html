@@ -5,31 +5,7 @@
 {% block content %}
     <div class="row" id="row">
         <div class="col-sm-4">
-            <div class="title">
-                <h2 class="text-secondary"><img src="https://img.icons8.com/color/48/000000/deciduous-tree.png">Category
-                </h2>
-            </div>
-
-            <div class="category-accordion">
-                {% for cat in categories %}
-                    {% if cat.visible %}
-                        <button class="accordion">{{ cat }}</button>
-                        <div class="panel">
-                            <ul class="list-unstyled text-small border-top categories">
-                                {% for child in cat.children.all %}
-                                    <li>
-                                        <a href="{% url 'category:sub-detail' child.parent.slug child.slug %}">{{ child }}</a>
-                                    </li>
-                                {% empty %}
-                                    <li>No subcategory in here.</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% else %}
-                        <a class="accordion-a" href="{% url 'category:detail' cat.slug %}">{{ cat }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
+           {% include 'layouts/category_sidebar.html' %}
         </div>
 
         <div class="col-sm-8 product-detail">
@@ -54,7 +30,7 @@
                             <div class="card-body">
                                 <h6><a href="{% url 'product-detail' product.id %}"
                                        class="link-dark">{{ product.title }}</a></h6>
-                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma }}</h6>
+                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma:False }}</h6>
                             </div>
                         </div>
                     </div>
@@ -68,23 +44,4 @@
         </div>
     </div>
     {% include 'layouts/brand_list.html' %}
-{% endblock %}
-
-{% block scripts %}
-    <script>
-        $(document).ready(function () {
-            let acc = document.getElementsByClassName("accordion");
-            for (let i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    let panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                });
-            }
-        });
-    </script>
 {% endblock %}
