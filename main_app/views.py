@@ -17,8 +17,8 @@ def send_email_view(request, product_id):
 
         send_templated_mail(
             template_name='product_order',
-            from_email='mail@naturelove.mn',
-            recipient_list=['munkhuu.modiw@gmail.com', 'tjesusho@gmail.com'],
+            from_email='noreply@naturelove.mn',
+            recipient_list=['munkhuu.modiw@gmail.com', 'naturelovemeremongolia@gmail.com'],
             fail_silently=False,
             context={
                 'product': product,
