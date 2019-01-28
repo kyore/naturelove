@@ -84,7 +84,7 @@
                     <header>
                         <h1>Таны захиалга <br>амжилттай бүртгэгдлээ !</h1>
                         <h3>ЗАХИАЛГЫН ДҮН. <span
-                                style="color: #76871a; font-weight: bold" id="order_price"></span>
+                                style="color: #76871a; font-weight: bold" id="order_price">{{ object.price|intcomma:False }} ₮</span>
                         </h3>
                         <div class="product_image">
                             <img src="/media/{{ object.thumbnail }}">
@@ -146,7 +146,8 @@
 
             order.bind('keyup mouseup', function () {
                 let price = formatter.format(productFirstPrice * $(this).val()) + ' ₮';
-                $('#order_price').html(price);
+                console.log(price);
+                $('#order_price').text(price);
                 productPrice.html("Үнэ: " + price);
             });
 

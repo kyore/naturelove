@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <h6><a href="{% url 'product-detail' product.id %}"
                                        class="link-dark">{{ product.title }}</a></h6>
-                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma }}</h6>
+                                <h6><i class="fa fa-tags text-green"></i>Үнэ: {{ product.price|intcomma:False }}</h6>
                             </div>
                         </div>
                     </div>

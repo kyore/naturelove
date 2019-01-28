@@ -9,14 +9,6 @@ button:focus {
     outline: 0;
 }
 
-.container {
-    width: 76%;
-}
-
-.container-fluid {
-    width: 89%;
-}
-
 .text-secondary {
     color: #744c17 !important;
     font-family: "CP", cursive;
@@ -158,7 +150,7 @@ a:hover {
 
 .coming-soon div {
     width: 100%;
-    height: 100%;
+    height: 200px;
     background-color: #eaeaea;
     text-align: center;
 }
@@ -170,6 +162,10 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.horizontal .col-sm-3 {
+    margin-top: 15px;
 }
 
 .horizontal .col-sm-4 {
@@ -233,6 +229,7 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+
 .order-information h3 {
     font-size: 14px;
     text-transform: uppercase;
@@ -240,11 +237,20 @@ a:hover {
     font-weight: 300;
 }
 
+/*Footer*/
 footer {
-    background-color: #76871a;
-    color: #ffffff !important;
     margin-top: 7rem;
+    padding: 30px;
+    background-color: #76871a;
+    width: 100%
 }
+
+footer .row {
+    margin: 0 !important;
+    color: #ffffff !important;
+}
+
+
 
 .link-dark {
     color: #000000;
@@ -512,6 +518,62 @@ footer {
     border: none;
     background: #ffffff;
     color: #76871a;
+}
+
+/*For mobile phone*/
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding-right: 0;
+    }
+
+    .navbar-nav li a {
+        font-size: 1rem;
+    }
+
+    .navbar-nav {
+        padding-bottom: 0.7rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid #b2b2b273;
+    }
+
+    .modal-body header {
+        padding: 10px 10px 10px 95px;
+    }
+
+    .modal-body header h1, h3 {
+        font-size: 14px;
+    }
+
+    .modal-body header .product_image {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+    .intro-description {
+        line-height: 0;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+    .about {
+        width: 100%!important;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+    .rounded-circle {
+        width: auto!important;
+        height: 200px!important;
+    }
+    footer {
+        font-size: 14px !important;
+    }
 }
 
 
