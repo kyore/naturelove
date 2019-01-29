@@ -94,13 +94,6 @@
     <div class="content">
         <div class="row" id="row">
             <div class="col-sm-4">
-                <div class="title">
-                    <h2 class="maromere-green">
-                        <img src="{% static 'fonts/img/Tree.png' %}" style="padding-right: 10px;" height="40">
-                        Category
-                    </h2>
-                </div>
-
                 <div class="category-accordion">
                     {% for cat in categories %}
                         {% if cat.visible %}
