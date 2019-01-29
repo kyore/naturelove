@@ -60,12 +60,10 @@
 
             <div class="separator--solid"></div>
 
-            <div class="row">
-                {% for image in product.images.all %}
-                    <img src="/media/{{ image.image }}" class="product-images">
-                    <div class="separator--solid"></div>
-                {% endfor %}
-            </div>
+            {% for image in product.images.all %}
+                <img src="/media/{{ image.image }}" class="product-images">
+                <div class="separator--solid"></div>
+            {% endfor %}
         </div>
     </div>
 
@@ -84,7 +82,8 @@
                     <header>
                         <h1>Таны захиалга <br>амжилттай бүртгэгдлээ !</h1>
                         <h3>ЗАХИАЛГЫН ДҮН. <span
-                                style="color: #76871a; font-weight: bold" id="order_price">{{ object.price|intcomma:False }} ₮</span>
+                                style="color: #76871a; font-weight: bold"
+                                id="order_price">{{ object.price|intcomma:False }} ₮</span>
                         </h3>
                         <div class="product_image">
                             <img src="/media/{{ object.thumbnail }}">
@@ -170,7 +169,7 @@
                         },
                         success: function (response) {
                             $('#orderModal').modal('hide');
-                            $.notify('Таны захиалга ажилттай илгээгдлээ.', { showProgressbar: true });
+                            $.notify('Таны захиалга ажилттай илгээгдлээ.', {showProgressbar: true});
                         },
                     });
                 }

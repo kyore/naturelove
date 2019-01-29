@@ -1,203 +1,198 @@
 @import url(fonts.css);
 
+.about, .intro {
+    user-select: none
+}
+
+.panel ul a, .panel ul li a:hover, a:hover {
+    text-decoration: none
+}
+
 html {
     font-family: Roboto, sans-serif;
-    font-weight: 400;
+    font-weight: 400
+}
+
+.maromere-green, .text-secondary, .text-secondary-black, .text-secondary-white {
+    font-family: CP, cursive
 }
 
 button:focus {
-    outline: 0;
+    outline: 0
 }
 
 .text-secondary {
-    color: #744c17 !important;
-    font-family: "CP", cursive;
+    color: #744c17 !important
 }
 
 .text-secondary-black {
-    color: #000000 !important;
-    font-family: "CP", cursive;
+    color: #000 !important
 }
 
 .text-secondary-white {
-    color: #ffffff !important;
-    font-family: "CP", cursive;
+    color: #fff !important
 }
 
 .text-green {
-    color: #76871a !important;
+    color: #76871a !important
 }
 
 .text-grey {
-    color: #b3b3b3 !important;
+    color: #b3b3b3 !important
 }
-
-/* Maro mere */
 
 .maromere-header {
     text-align: center;
-    padding: 40px;
+    padding: 40px
 }
 
 .maromere-green {
     padding: 20px;
     background-color: #76871a;
-    color: #ffffff !important;
-    font-family: "CP", cursive;
-}
-
-.intro {
-    user-select: none;
+    color: #fff !important
 }
 
 .intro-text {
-    line-height: 0 !important;
+    line-height: 0 !important
 }
 
 .intro-text h1, p {
     margin: 0;
     padding: 0;
     display: inline;
-    line-height: 1 !important;
+    line-height: 1 !important
 }
 
 .intro-text span {
     color: #76871a;
-    font-size: 10vw;
+    font-size: 10vw
 }
 
 .bigger {
-    font-size: 16vw !important;
+    font-size: 16vw !important
 }
 
 .intro-text h1 {
-    font-size: 10.5vw;
+    font-size: 10.5vw
 }
 
 .intro-text p {
-    font-size: 6vw;
+    font-size: 6vw
 }
 
 .intro-description {
     color: #000;
     width: 50%;
-    font-size: 1.4rem;
+    font-size: 1.4rem
 }
 
 .carousel {
-    margin: 20px 0;
+    margin: 20px 0
 }
 
 .carousel-inner img {
     object-fit: cover;
-    width: 100%;
+    width: 100%
 }
 
 .navbar {
     padding-top: 2.1rem;
     padding-right: 3.5rem;
-    padding-bottom: 0;
+    padding-bottom: 0
 }
 
 .navbar li a {
-    padding: 0 0.5rem;
-    font-size: 1.4rem;
+    padding: 0 .5rem;
+    font-size: 1.4rem
 }
 
 .about {
-    user-select: none;
     padding-top: 50px;
     margin: 0 auto;
     width: 60%;
-    text-align: center;
+    text-align: center
 }
 
 .about h2 {
-    margin: 10px;
+    margin: 10px
 }
 
 .about p {
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .rounded-circle {
     margin: 80px 0;
     width: 320px;
     height: 320px;
-    object-fit: cover;
-}
-
-a:hover {
-    text-decoration: none;
+    object-fit: cover
 }
 
 .navbar li {
-    padding: 0 10px;
+    padding: 0 10px
 }
 
 .border-bottom {
-    border-bottom: 1px solid #b2b2b273 !important;
+    border-bottom: 1px solid #b2b2b273 !important
 }
 
 .content {
-    padding-top: 50px;
+    padding-top: 50px
 }
 
 .content .title {
-    padding-bottom: 20px;
+    padding-bottom: 20px
 }
 
 .coming-soon div {
     width: 100%;
     height: 200px;
     background-color: #eaeaea;
-    text-align: center;
+    text-align: center
 }
 
 .coming-soon div span {
     position: relative;
-    color: #000000;
+    color: #000;
     float: left;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
 }
 
 .horizontal .col-sm-3 {
-    margin-top: 15px;
+    margin-top: 15px
+}
+
+.modal-body header h1, .modal-body header h3 {
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300
 }
 
 .horizontal .col-sm-4 {
-    padding-bottom: 40px;
+    padding-bottom: 40px
 }
 
 .horizontal img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover
 }
 
-/* Product order modal */
 .modal-body header {
     position: relative;
-    padding: 20px;
+    padding: 20px
 }
 
 .modal-body header h1 {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-align: center;
+    font-size: 20px
 }
 
 .modal-body header h3 {
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 300;
-    text-transform: uppercase;
-    text-align: center;
+    font-size: 16px
 }
 
 .modal-body header .product_image {
@@ -205,20 +200,20 @@ a:hover {
     left: 20px;
     top: 20px;
     width: 100px;
-    height: 100px;
+    height: 100px
 }
 
 .modal-body header .product_image img {
     width: 100%;
     vertical-align: middle;
-    border-style: none;
+    border-style: none
 }
 
 .description-text {
     text-align: center;
     font-size: 14px;
-    color: rgb(89, 89, 89);
-    padding: 20px 40px;
+    color: #595959;
+    padding: 20px 40px
 }
 
 .description-text p {
@@ -226,18 +221,23 @@ a:hover {
     text-align: justify;
     line-height: 1.5em;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
 }
 
+.accordion, .accordion-a {
+    text-align: left;
+    transition: .1s;
+    cursor: pointer;
+    outline: 0
+}
 
 .order-information h3 {
     font-size: 14px;
     text-transform: uppercase;
-    color: rgb(64, 64, 64);
-    font-weight: 300;
+    color: #404040;
+    font-weight: 300
 }
 
-/*Footer*/
 footer {
     margin-top: 7rem;
     padding: 30px;
@@ -247,47 +247,45 @@ footer {
 
 footer .row {
     margin: 0 !important;
-    color: #ffffff !important;
+    color: #fff !important
 }
 
-
-
 .link-dark {
-    color: #000000;
-    font-weight: 400;
+    color: #000;
+    font-weight: 400
 }
 
 .inline-nav li a {
     color: #d0d0d0;
-    font-weight: 300;
+    font-weight: 300
 }
 
 .inline-nav li a:hover {
-    color: #76871a;
+    color: #76871a
 }
 
 .product-images {
     margin: 0 auto;
     width: 100%;
-    height: auto;
+    height: auto
 }
 
 .separator--solid {
     border-bottom: 1px solid #ebedf2;
-    margin: 30px 0;
+    margin: 30px 0
 }
 
 .order {
-    margin-top: 2rem;
+    margin-top: 2rem
 }
 
 .order label {
-    width: 15%;
+    width: 15%
 }
 
 .order input {
     padding: 3px;
-    border-radius: 0;
+    border-radius: 0
 }
 
 .order button {
@@ -295,253 +293,246 @@ footer .row {
     background-color: #768432;
     border-radius: 0;
     font-size: 14px;
-    padding: 5px 20px;
+    padding: 5px 20px
+}
+
+.accordion, .accordion-a, .category-accordion, .panel {
+    background-color: #fafafafa
 }
 
 .fa {
-    margin-right: 5px;
+    margin-right: 5px
 }
 
 .f-300 {
-    font-weight: 300 !important;
+    font-weight: 300 !important
 }
 
 .f-400 {
-    font-weight: 400 !important;
+    font-weight: 400 !important
 }
 
 .f-500 {
-    font-weight: 500 !important;
+    font-weight: 500 !important
 }
 
 .link-dark:hover {
-    color: #333333;
+    color: #333
 }
 
 .brand-list {
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .brand-list h2 {
-    padding: 20px;
+    padding: 20px
 }
 
 .accordion-a {
     display: inline-block;
-    background-color: #fafafafa;
-    color: #000000;
-    cursor: pointer;
+    color: #000;
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.1s;
+    font-size: 15px
 }
 
 .accordion-a:hover {
-    color: #000000 !important;
-    font-weight: bold !important;
+    color: #000 !important;
+    font-weight: 700 !important
 }
 
 .accordion-a:after {
     color: #76871a;
     content: '\00bb';
-    font-weight: bold;
+    font-weight: 700;
     float: right;
-    margin-left: 5px;
+    margin-left: 5px
 }
 
-/* Product List*/
 .product-grid {
-    padding: 50px 40px;
+    padding: 50px 40px
 }
 
 .product-detail {
     padding: 20px 40px;
-    border-left: 1px solid #ebedf2;
+    border-left: 1px solid #ebedf2
+}
+
+.accordion, .card {
+    border: none
 }
 
 .product-detail img {
     width: 100% !important;
-    height: auto !important;
+    height: auto !important
 }
 
 .product-detail ul {
-    padding-bottom: 40px;
-}
-
-.card {
-    border: none;
+    padding-bottom: 40px
 }
 
 .card-body {
-    padding: 1.25rem 0;
+    padding: 1.25rem 0
 }
 
 .card-body h6 {
-    color: #000000;
-    font-weight: 300;
+    color: #000;
+    font-weight: 300
 }
 
 .card-body i {
     padding-right: 5px;
-    font-size: 16px;
+    font-size: 16px
 }
 
 .card-title {
-    margin: 0;
+    margin: 0
 }
 
-/*Accordion*/
 .category-accordion {
-    background-color: #fafafafa;
-    padding: 25px;
+    padding: 25px
 }
 
 .accordion {
-    background-color: #fafafafa;
-    color: #000000;
-    cursor: pointer;
+    color: #000;
     padding: 18px;
     width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.1s;
+    font-size: 15px
 }
 
-.category-accordion .active, .accordion:hover {
-    font-weight: bold;
+.accordion:hover, .category-accordion .active {
+    font-weight: 700
 }
 
 .accordion:after {
     color: #76871a;
     content: '\002B';
-    font-weight: bold;
+    font-weight: 700;
     float: right;
-    margin-left: 5px;
+    margin-left: 5px
 }
 
 .category-accordion .active:after {
-    content: "\2212";
+    content: "\2212"
 }
 
 .panel {
-    background-color: #fafafafa;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height .2s ease-out
 }
 
 .panel ul {
     padding: 15px 0 15px 30px;
-    margin: 0;
+    margin: 0
 }
 
 .panel ul li {
-    padding: 5px;
+    padding: 5px
 }
 
 .panel ul a {
-    color: #000;
-    text-decoration: none;
+    color: #000
 }
 
-.panel ul li .link-active {
-    color: #76871a;
+.page-link:hover, .panel ul li .link-active {
+    color: #76871a
 }
 
 .panel ul li a:hover {
-    text-decoration: none;
     cursor: pointer;
-    color: #76871a;
+    color: #76871a
 }
-
-/*Blog*/
 
 .pagination {
-    font-size: 12px;
-}
-
-.page-link:hover {
-    color: #76871a;
+    font-size: 12px
 }
 
 .page-link {
     border-radius: 0;
-    color: #333333;
-    border: none;
+    color: #333;
+    border: none
 }
 
 .page-item:last-child .page-link {
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0
 }
 
 .page-item.active .page-link {
     background-color: #efefef;
     border: none;
-    color: #000;
+    color: #000
 }
 
 .post-title {
-    margin: 20px 0;
+    margin: 20px 0
 }
 
 .post-title h6 {
-    margin: 0;
+    margin: 0
 }
 
 .post-title p {
-    font-size: .8rem;
+    font-size: .8rem
 }
 
 .post-title i {
-    color: #76871a;
+    color: #76871a
 }
 
 .post-content {
-    font-weight: 300;
+    font-weight: 300
 }
 
 .post-content a {
     display: inline-block;
     font-weight: 400;
-    outline: none;
-    padding-top: 8px;
+    outline: 0;
+    padding-top: 8px
 }
 
 .post-content a:hover {
     border: none;
-    background: #ffffff;
-    color: #76871a;
+    background: #fff;
+    color: #76871a
 }
 
-/*For mobile phone*/
 @media only screen and (max-width: 768px) {
     .navbar {
-        padding-right: 0;
+        padding-right: 0
     }
 
     .navbar-nav li a {
-        font-size: 1rem;
+        font-size: 1rem
+    }
+
+    .maromere-product {
+        margin-top: 40px
+    }
+
+    .maromere-header {
+        width: 100%;
+        padding: 40px
+    }
+
+    .maromere-header img {
+        width: 100%
     }
 
     .navbar-nav {
-        padding-bottom: 0.7rem;
-        margin-bottom: 0.5rem;
-        border-bottom: 1px solid #b2b2b273;
+        padding-bottom: .7rem;
+        margin-bottom: .5rem;
+        border-bottom: 1px solid #b2b2b273
     }
 
     .modal-body header {
-        padding: 10px 10px 10px 95px;
+        padding: 10px 10px 10px 95px
     }
 
     .modal-body header h1, h3 {
-        font-size: 14px;
+        font-size: 14px
     }
 
     .modal-body header .product_image {
@@ -549,31 +540,33 @@ footer .row {
         width: 75px;
         height: 75px;
         top: 10px;
-        left: 10px;
+        left: 10px
     }
 
     .carousel-item img {
-        height: 200px;
+        height: 200px
     }
+
     .intro-description {
         line-height: 0;
         width: 100%;
-        font-size: 1.2rem;
+        font-size: 1.2rem
     }
+
     .about {
-        width: 100%!important;
+        width: 100% !important
     }
 
     .about h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem
     }
+
     .rounded-circle {
-        width: auto!important;
-        height: 200px!important;
+        width: auto !important;
+        height: 200px !important
     }
+
     footer {
-        font-size: 14px !important;
+        font-size: 14px !important
     }
 }
-
-
