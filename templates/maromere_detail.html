@@ -1,0 +1,176 @@
+{% extends 'maromera_base.html' %}
+{% load humanize %}
+{% load thumbnail %}
+{% load static %}
+
+{% block content %}
+
+    <div style="background: #000000">
+        <div class="container container-small">
+            <div class="row justify-content-center text-center">
+                <div class="header-image mb-5">
+                    <img src="{% static 'fonts/img/maromere_slider.jpg' %}" alt="" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 100%; background: #FFFFFF; padding: 2rem">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    {% include 'layouts/category_sidebar.html' %}
+                </div>
+
+                <div class="col-sm-8 product-detail">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="card-img-top" src="/media/{{ product.thumbnail }}" alt>
+                        </div>
+                        <div class="col-md-7">
+
+                            <div style="padding-top: 40px">
+                                <h2 class="text-black">{{ object.title }}</h2>
+                                <h5 class="f-300"><i
+                                        class="fa fa-tags text-green"></i><span
+                                        id="product-price"
+                                        style="font-weight: 500;">Үнэ: {{ product.price|intcomma:False }} ₮</span></h5>
+
+                                <div class="order">
+                                    <label>
+                                        <input type="number" class="form-control" name="order" value="1" min="0"
+                                               max="50">
+                                    </label>
+                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                            data-target="#orderModal">
+                                        Захиалах
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator--solid"></div>
+
+                    {% for image in product.images.all %}
+                        <img src="/media/{{ image.image }}" class="product-images">
+                        <div class="separator--solid"></div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="orderModal" tabindex="-1" role="dialog"
+                 aria-labelledby="orderModalTitle" aria-hidden="true"
+                 data-label="{% url 'category:send-email' object.id %}">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Захиалга илгээх</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <header>
+                                <h1>Таны захиалга <br>амжилттай бүртгэгдлээ !</h1>
+                                <h3>ЗАХИАЛГЫН ДҮН. <span
+                                        style="color: #76871a; font-weight: bold"
+                                        id="order_price">{{ object.price|intcomma:False }} ₮</span>
+                                </h3>
+                                <div class="product_image">
+                                    <img src="/media/{{ object.thumbnail }}">
+                                </div>
+                            </header>
+
+                            <div class="description-text">
+                                <p>Төлбөр төлөгдсөний дараа таны захиалга идэвхжихийг анхаарна уу! Төлбөрийг доорх
+                                    дансанд
+                                    шилжүүлэх ба <span style="color: red;font-size: 15px; font-weight: bold">утасны дугаарыг гүйлгээний утга дээр бичнэ үү.</span>
+                                </p>
+
+                                <div class="text-center my-md-5 my-sm-3">Асууж, лавлах зүйл байвал 9006-1661 дугаараас
+                                    авна
+                                    уу.
+                                </div>
+                            </div>
+
+
+                            <div class="row justify-content-center">
+                                <div class="order-information">
+                                    <h3>Хүлээн авагч: Nature Love</h3>
+                                    <h3>ХААН БАНК: 5131052590</h3>
+                                    <h3>ГҮЙЛГЭЭНИЙ УТГА: УТАСНЫ ДУГААР</h3>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center" style="margin-top: 20px">
+                                <div class="col-md-4 mb-3">
+                                    <label for="orderPhoneNumber">Утасны дугаар</label>
+                                    <input type="number" class="form-control" id="orderPhoneNumber"
+                                           placeholder="Утасны дугаар"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% csrf_token %}
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Гарах</button>
+                            <button type="button" class="btn btn-primary" id="orderSend">Илгээх</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var formatter = Intl.NumberFormat('mn', {
+                minimumFractionDigits: 0
+            });
+
+            let productPrice = $('#product-price');
+            let productFirstPrice = parseInt("{{ product.price }}");
+
+            let order = $('input[name=order]');
+
+            order.bind('keyup mouseup', function () {
+                let price = formatter.format(productFirstPrice * $(this).val()) + ' ₮';
+                console.log(price);
+                $('#order_price').text(price);
+                productPrice.html("Үнэ: " + price);
+            });
+
+            let orderSendBtn = $('#orderSend');
+            let phoneNumber = $('#orderPhoneNumber');
+
+            let url = $('#orderModal').attr('data-label');
+
+            orderSendBtn.on('click', function () {
+                if (phoneNumber.val() === '') {
+                    phoneNumber.focus()
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: {
+                            'order_count': order.val(),
+                            'phone_number': phoneNumber.val(),
+                            csrfmiddlewaretoken: '{{ csrf_token }}'
+                        },
+                        success: function (response) {
+                            $('#orderModal').modal('hide');
+                            $.notify('Таны захиалга ажилттай илгээгдлээ.', {showProgressbar: true});
+                        },
+                    });
+                }
+            });
+        });
+
+    </script>
+{% endblock %}

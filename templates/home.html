@@ -3,25 +3,21 @@
 {% load thumbnail %}
 
 {% block content %}
-    <div class="product-list">
-        <div class="title">
-            <h2 class="text-secondary">
-                <img src="{% static 'fonts/img/Tree.png' %}" style="padding-right: 10px;" height="40" alt>
-                Special Product
-            </h2>
-        </div>
-    </div>
 
-    <div class="row horizontal">
-        {% for special in special_products %}
-            <div class="col-sm-4">
-                {% thumbnail special.thumbnail "x200" crop="center" as img %}
-                    <a href="{% url 'product-detail' special.id %}"><img class="card-img-top" src="{{ img.url }}" width="{{ img.width }}"
-                                    height="{{ img.height }}">
+    <div class="product-list">
+        <div class="text-center mb-2">
+            <h1 class="text-secondary-black">BEST ITEM</h1>
+        </div>
+
+        <div class="row">
+            {% for special in special_products %}
+                <div class="col-xl-4">
+                    <a href="{% url 'product-detail' special.id %}">
+                        <img class="card-img-top" src="/media/{{ special.thumbnail }}" alt>
                     </a>
-                {% endthumbnail %}
-            </div>
-        {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="about">

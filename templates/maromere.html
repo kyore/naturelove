@@ -1,69 +1,19 @@
-<!doctype html>
+{% extends 'maromera_base.html' %}
 {% load static %}
-{% load humanize %}
-{% load thumbnail %}
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% block styles %}
     <link rel="stylesheet"
-          href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css">
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/ijZ2rDTc.css' %}">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {"families": ["Roboto:300,400,500,600,700"]},
-            active: function () {
-                sessionStorage.fonts = true;
-            }
-        });
-    </script>
-    <style>
-        .nav-item a:hover {
-            color: #e7c6b2 !important;
-        }
-    </style>
-    <title>Maro mere | Nature of love</title>
-</head>
-
-<body class="maromere">
-
-<div class="container container-small">
-    <nav class="navbar navbar-expand navbar-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/" class="nav-link text-secondary-white font-weight-bold">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'shop' %}" class="nav-link text-secondary-white font-weight-bold">SHOP</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'blog:list' %}" class="nav-link text-secondary-white font-weight-bold">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-secondary-white font-weight-bold">CONTACT</a>
-                </li>
-            </ul>
+{% block content %}
+    <div class="container">
+        <div class="header-image mb-5">
+            <img src="{% static 'fonts/img/maromere_slider.jpg' %}" alt="" class="w-100">
         </div>
-    </nav>
 
-    <div class="maromere-header">
-        <img src="{% static 'fonts/img/maromere_logo.png' %}" alt>
-    </div>
-
-    <div class="header-image mb-5">
-        <img src="{% static 'fonts/img/maromere_slider.jpg' %}" alt="" class="w-100">
-    </div>
-
-    <h3 class="maromere-text">"Бүтцээсээ загвар хүртлээ зөвхөн танд зориулан бүтээгдсэн ариун цэврийн
-        хэрэгсэл"</h3>
-
-    <div class="content">
+        <h3 class="maromere-text">"Бүтцээсээ загвар хүртлээ зөвхөн танд зориулан бүтээгдсэн ариун цэврийн
+            хэрэгсэл"</h3>
         <div class="row justify-content-center">
             <div class="video-section" style="width: 100%">
                 <video controls
@@ -73,7 +23,6 @@
                 </video>
             </div>
         </div>
-
         <div class="row">
             <div class="col-xl-12">
                 <div class="maromere-text text-center mb-5">
@@ -90,34 +39,4 @@
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="container awards">
-    <img src="{% static 'fonts/img/award_footer.jpg' %}" alt="" class="w-100">
-</div>
-
-<footer class="maromere-footer">
-    <div class="container container-small">
-        <div class="row">
-            <div class="col-12 col-md">
-                <img src="{% static 'fonts/img/maromere_logo.png' %}" class="w-100" alt>
-            </div>
-
-            <div class="col-12 col-md text-center">
-                <img src="{% static 'fonts/img/icon.jpg' %}" class="maromere-icon" alt>
-            </div>
-            <div class="col-12 col-md">
-                <ul class="list-unstyled text-small">
-                    <li>Захиалах цаг: Даваа ~ Баасан 10:00 ~ 16:00 (Цайны цаг 12:00 ~ 13:00)</li>
-                    <li>Захиалгын дугаар: 7555-1515, 8050-1515</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}

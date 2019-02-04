@@ -9,8 +9,8 @@ html {
     font-weight: 400
 }
 
-.text-secondary,.text-secondary-black,.text-secondary-white{
-    font-family:CP,cursive
+.text-secondary, .text-secondary-black, .text-secondary-white {
+    font-family: CP, cursive
 }
 
 /*Maro mere*/
@@ -32,6 +32,10 @@ html {
     margin: 0 auto;
 }
 
+.nav-link {
+    font-size: 1.4rem;
+}
+
 .maromere-text span {
     background: #000000;
     padding: 0 10px;
@@ -40,6 +44,10 @@ html {
 .maromere .awards {
     padding: 130px 30px 40px 30px;
     border-bottom: 2px solid #afa58a;
+}
+
+.text-black {
+    color: #000;
 }
 
 .maromere .award-image {
@@ -66,6 +74,7 @@ html {
     font-family: Roboto, sans-serif;
     color: #afa58a !important;
 }
+
 .maromere-icon {
     width: 180px;
 }
@@ -123,58 +132,19 @@ button:focus {
     color: #b3b3b3 !important
 }
 
-.intro-text {
-    line-height: 0 !important
-}
-
-.intro-text h1, .intro-text p {
-    margin: 0;
-    padding: 0;
-    display: inline;
-    line-height: 1 !important
-}
-
-.intro-text span {
-    color: #76871a;
-    font-size: 10vw
-}
-
-.bigger {
-    font-size: 16vw !important
-}
-
-.intro-text h1 {
-    font-size: 10.5vw
-}
-
-.intro-text p {
-    font-size: 6vw
-}
-
-.intro-description {
-    color: #000;
-    width: 50%;
-    font-size: 1.4rem
+.site-logo {
+    width: 280px!important;
 }
 
 .carousel {
-    margin: 20px 0
+    padding: 40px;
+    border: 1px solid #afa58a;
+    margin: 40px 0 40px 0;
 }
 
 .carousel-inner img {
     object-fit: cover;
     width: 100%
-}
-
-.navbar {
-    padding-top: 2.1rem;
-    padding-right: 3.5rem;
-    padding-bottom: 0
-}
-
-.navbar li a {
-    padding: 0 .5rem;
-    font-size: 1.4rem
 }
 
 .about {
@@ -210,7 +180,7 @@ button:focus {
 
 .coming-soon div {
     width: 100%;
-    height: 200px;
+    height: 100%;
     background-color: #eaeaea;
     text-align: center
 }
@@ -224,25 +194,11 @@ button:focus {
     transform: translate(-50%, -50%)
 }
 
-.horizontal .col-sm-3 {
-    margin-top: 15px
-}
-
 .modal-body header h1, .modal-body header h3 {
     margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
     font-weight: 300
-}
-
-.horizontal .col-sm-4 {
-    padding-bottom: 40px
-}
-
-.horizontal img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover
 }
 
 .modal-body header {
@@ -562,15 +518,15 @@ footer .row {
     color: #76871a
 }
 
+.product-list {
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+}
+
 @media only screen and (max-width: 768px) {
-    .navbar {
-        padding-right: 0
+    .site-logo {
+        width: 100px!important;
     }
-
-    .navbar-nav li a {
-        font-size: 1rem
-    }
-
     .maromere-product {
         margin-top: 40px
     }
@@ -608,12 +564,6 @@ footer .row {
 
     .carousel-item img {
         height: 200px
-    }
-
-    .intro-description {
-        line-height: 0;
-        width: 100%;
-        font-size: 1.2rem
     }
 
     .about {

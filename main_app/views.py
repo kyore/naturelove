@@ -87,6 +87,12 @@ class SubCategoryDetailView(generic.DetailView):
 class ProductDetailView(generic.DetailView):
     model = Product
 
+    def get_template_names(self):
+        if self.object.category.parent.name == 'Maro mere':
+            return ['maromere_detail.html']
+        else:
+            return ['main_app/product_detail.html']
+
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
