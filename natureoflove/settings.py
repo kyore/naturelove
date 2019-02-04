@@ -7,7 +7,7 @@ SECRET_KEY = 'ka+qnyu@2j)9i&-+81=oks38zfa+(^t59rlm-z+6gk8nm+vz6q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'naturelove.mn', 'www.naturelove.mn']
+ALLOWED_HOSTS = ['localhost', 'naturelove.mn', 'www.naturelove.mn', '192.168.2.210']
 
 # Application definition
 

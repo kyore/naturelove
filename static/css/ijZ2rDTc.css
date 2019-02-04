@@ -1,10 +1,6 @@
 @import url(fonts.css);
 
-.about, .intro {
-    user-select: none
-}
-
-.panel ul a, .panel ul li a:hover, a:hover {
+.panel ul a, .panel ul li a:hover, a:hover, .about, .intro {
     text-decoration: none
 }
 
@@ -13,8 +9,94 @@ html {
     font-weight: 400
 }
 
-.maromere-green, .text-secondary, .text-secondary-black, .text-secondary-white {
-    font-family: CP, cursive
+.text-secondary,.text-secondary-black,.text-secondary-white{
+    font-family:CP,cursive
+}
+
+/*Maro mere*/
+.maromere .maromere-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.maromere-header {
+    text-align: center;
+    padding: 80px
+}
+
+.maromere-text h1 {
+    width: 35%;
+    text-align: center;
+    border-bottom: 2px solid #afa58a;
+    line-height: 0.1em;
+    margin: 0 auto;
+}
+
+.maromere-text span {
+    background: #000000;
+    padding: 0 10px;
+}
+
+.maromere .awards {
+    padding: 130px 30px 40px 30px;
+    border-bottom: 2px solid #afa58a;
+}
+
+.maromere .award-image {
+    width: 100%;
+}
+
+.maromere .video-section {
+    margin: 4.5rem 0;
+}
+
+.maromere-green {
+    padding: 20px;
+    background-color: #76871a;
+    color: #fff !important;
+    font-size: 12px;
+}
+
+.maromere {
+    background-color: #000000;
+}
+
+.maromere-text {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    color: #afa58a !important;
+}
+.maromere-icon {
+    width: 180px;
+}
+
+.maromere-footer {
+    margin: 0;
+    background-color: #000000;
+}
+
+/*Maro Mera End*/
+
+@media (min-width: 768px) {
+    .container-small {
+        max-width: 570px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-small {
+        max-width: 810px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-small {
+        max-width: 990px;
+    }
+}
+
+.container-small {
+    width: 100%;
 }
 
 button:focus {
@@ -41,22 +123,11 @@ button:focus {
     color: #b3b3b3 !important
 }
 
-.maromere-header {
-    text-align: center;
-    padding: 40px
-}
-
-.maromere-green {
-    padding: 20px;
-    background-color: #76871a;
-    color: #fff !important
-}
-
 .intro-text {
     line-height: 0 !important
 }
 
-.intro-text h1, p {
+.intro-text h1, .intro-text p {
     margin: 0;
     padding: 0;
     display: inline;
@@ -135,14 +206,6 @@ button:focus {
 
 .border-bottom {
     border-bottom: 1px solid #b2b2b273 !important
-}
-
-.content {
-    padding-top: 50px
-}
-
-.content .title {
-    padding-bottom: 20px
 }
 
 .coming-soon div {
@@ -514,7 +577,7 @@ footer .row {
 
     .maromere-header {
         width: 100%;
-        padding: 40px
+        padding: 80px
     }
 
     .maromere-header img {
@@ -564,6 +627,14 @@ footer .row {
     .rounded-circle {
         width: auto !important;
         height: 200px !important
+    }
+
+    .maromere-text h1 {
+        width: 80%;
+        text-align: center;
+        border-bottom: 2px solid #afa58a;
+        line-height: 0.1em;
+        margin: 0 auto;
     }
 
     footer {
