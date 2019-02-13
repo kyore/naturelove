@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: Roboto, sans-serif!important;
     letter-spacing: 1px !important;
 }
 
@@ -139,7 +139,7 @@ button:focus {
 }
 
 .carousel {
-    padding: 40px;
+    padding: 20px;
     border: 1px solid #afa58a;
     margin: 40px 0 40px 0;
 }
@@ -571,7 +571,7 @@ footer .row {
 @media only screen and (max-width: 768px) {
 
     .site-logo {
-        width: 100px !important;
+        width: 150px !important;
     }
 
     .maromere-product {
@@ -613,7 +613,7 @@ footer .row {
     }
 
     .about h2 {
-        font-size: 1.5rem
+        font-size: 1.2rem
     }
 
     .rounded-circle {
