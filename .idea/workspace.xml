@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34851793-cfd6-4d1b-83ea-97a09c8ddc23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/ijZ2rDTc.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/ijZ2rDTc.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,35 +17,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1039">
-              <caret line="142" column="30" lean-forward="true" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layouts/footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,7 +28,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.instro</find>
       <find>content</find>
       <find>mobile</find>
       <find>@media</find>
@@ -85,6 +57,7 @@
       <find>body</find>
       <find>navbar</find>
       <find>.about h2</find>
+      <find>about h2</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -106,13 +79,9 @@
         <option value="$PROJECT_DIR$/p" />
         <option value="$PROJECT_DIR$/templates/layouts/category_location.html" />
         <option value="$PROJECT_DIR$/blog/models.py" />
-        <option value="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" />
-        <option value="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" />
-        <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
         <option value="$PROJECT_DIR$/templates/layouts/category_sidebar.html" />
         <option value="$PROJECT_DIR$/test_email.py" />
         <option value="$PROJECT_DIR$/main_app/templates/templated_email/product_order.email" />
-        <option value="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" />
         <option value="$PROJECT_DIR$/s.txt" />
         <option value="$PROJECT_DIR$/static/css/styletest.css" />
         <option value="$PROJECT_DIR$/templates/test.html" />
@@ -134,12 +103,16 @@
         <option value="$PROJECT_DIR$/templates/layouts/brand_list.html" />
         <option value="$PROJECT_DIR$/templates/layouts/navbar.html" />
         <option value="$PROJECT_DIR$/templates/layouts/maromera_navbar.html" />
-        <option value="$PROJECT_DIR$/static/css/style.min.css" />
         <option value="$PROJECT_DIR$/templates/maromera_base.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/product_detail.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/layouts/footer.html" />
         <option value="$PROJECT_DIR$/static/css/ijZ2rDTc.css" />
+        <option value="$PROJECT_DIR$/static/css/style.min.css" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" />
+        <option value="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" />
+        <option value="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
       </list>
     </option>
   </component>
@@ -166,28 +139,20 @@
             <path>
               <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
               <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
               <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
               <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
-              <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="brandcollection" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -264,16 +229,15 @@
       <workItem from="1549241663603" duration="2360000" />
       <workItem from="1549254464706" duration="8710000" />
       <workItem from="1549934540749" duration="785000" />
-      <workItem from="1550031125589" duration="22292000" />
+      <workItem from="1550031125589" duration="23045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53410000" />
+    <option name="totallyTimeSpent" value="54163000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2489019" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -347,31 +311,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/product_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/ckeditor/ckeditor/styles.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test_email.py" />
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s.txt" />
     <entry file="file://$PROJECT_DIR$/static/css/styletest.css" />
     <entry file="file://$PROJECT_DIR$/templates/test.html" />
@@ -420,13 +363,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fonts/img/brandcollection/logo_2.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/category_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -565,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6615" selection-start-column="6615" selection-end-column="6615" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/maromera_navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -579,24 +508,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/maromera_base.html">
+    <entry file="file://$PROJECT_DIR$/static/css/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        <state>
+          <caret column="6645" selection-start-column="6645" selection-end-column="6645" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/product_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="38" column="80" lean-forward="true" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -607,10 +529,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
+    <entry file="file://$PROJECT_DIR$/templates/maromera_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="142" column="30" lean-forward="true" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
+        <state relative-caret-position="24">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/category_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="25" selection-start-line="25" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/product_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="38" column="80" lean-forward="true" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
         </state>
       </provider>
     </entry>

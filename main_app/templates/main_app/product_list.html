@@ -21,10 +21,7 @@
                 {% for product in object_list %}
                     <div class="col-md-4">
                         <div class="card">
-                            {% thumbnail product.thumbnail "200x150" crop="center" as img %}
-                                <img class="card-img-top" src="{{ img.url }}" width="{{ img.width }}"
-                                     height="{{ img.height }}">
-                            {% endthumbnail %}
+                            <img class="card-img-top" src="/media/{{ product.thumbnail }}" alt>
                             <div class="card-body">
                                 <h6><a href="{% url 'product-detail' product.id %}"
                                        class="link-dark">{{ product.title }}</a></h6>
