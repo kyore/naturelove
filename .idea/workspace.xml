@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/navbar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +18,17 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,7 +112,6 @@
         <option value="$PROJECT_DIR$/templates/maromere.html" />
         <option value="$PROJECT_DIR$/templates/maromere_detail.html" />
         <option value="$PROJECT_DIR$/templates/layouts/brand_list.html" />
-        <option value="$PROJECT_DIR$/templates/layouts/navbar.html" />
         <option value="$PROJECT_DIR$/templates/layouts/maromera_navbar.html" />
         <option value="$PROJECT_DIR$/templates/maromera_base.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/product_detail.html" />
@@ -113,6 +123,7 @@
         <option value="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
+        <option value="$PROJECT_DIR$/templates/layouts/navbar.html" />
       </list>
     </option>
   </component>
@@ -229,15 +240,16 @@
       <workItem from="1549241663603" duration="2360000" />
       <workItem from="1549254464706" duration="8710000" />
       <workItem from="1549934540749" duration="785000" />
-      <workItem from="1550031125589" duration="23045000" />
+      <workItem from="1550031125589" duration="23445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54163000" />
+    <option name="totallyTimeSpent" value="54563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2489019" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -494,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/maromera_navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -575,6 +580,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
