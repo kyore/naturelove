@@ -1,7 +1,6 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between rounded">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between rounded">
     <a class="navbar-brand" href="#">
-        <img src="{% static 'fonts/img/home_logo.png' %}" alt="" class="site-logo">
     </a>
 
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
@@ -13,10 +12,10 @@
         <div class="top-nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-green" href="{% url 'home' %}"><i class="fa fa-home"></i>Home</a>
+                    <a class="nav-link text-green maromera-hover" href="{% url 'home' %}"><i class="fa fa-home"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-green" href="{% url 'blog:list' %}"><i class="fa fa-pencil-square-o"></i>Blog</a>
+                    <a class="nav-link text-green maromera-hover" href="{% url 'blog:list' %}"><i class="fa fa-pencil-square-o"></i>Blog</a>
                 </li>
             </ul>
         </div>
@@ -24,7 +23,7 @@
         <ul class="navbar-nav mr-auto">
             {% for category in categories|slice:":3" %}
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="{% url 'category:detail' category.slug %}">{{ category }}</a>
+                    <a class="nav-link text-secondary maromera-hover" href="{% url 'category:detail' category.slug %}">{{ category }}</a>
                 </li>
             {% endfor %}
         </ul>

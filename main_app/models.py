@@ -11,6 +11,7 @@ from colorfield.fields import ColorField
 class Category(models.Model):
     name = models.CharField(max_length=80)
     slug = models.SlugField(editable=False, null=False)
+    image = models.ImageField(upload_to='cat_images/', null=True, blank=True)
     color = ColorField(default='#ffffff')
     visible = models.BooleanField(default=True)
 

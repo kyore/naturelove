@@ -1,21 +1,11 @@
-{% load static %}
 <div class="brand-list">
     <h2 class="text-secondary-black text-center">BRAND COLLECTION LIST</h2>
 
     <div class="row horizontal">
-        <div class="col-sm-3">
-            <img src="{% static 'fonts/img/brandcollection/logo_3.jpg' %}" alt class="w-100">
-        </div>
-        <div class="col-sm-3">
-            <img src="{% static 'fonts/img/brandcollection/logo_2.jpg' %}" alt class="w-100">
-        </div>
-        <div class="col-sm-3">
-            <img src="{% static 'fonts/img/brandcollection/Logo_1.jpg' %}" alt class="w-100">
-        </div>
-        <div class="col-sm-3 coming-soon">
-            <div>
-                <span>Coming soon</span>
+        {% for category in categories %}
+            <div class="col-sm-3">
+                <a href="{% url 'category:detail' category.slug %}"><img src="/media/{{ category.image }}" alt class="w-100"></a>
             </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

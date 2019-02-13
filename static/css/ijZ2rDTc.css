@@ -9,6 +9,11 @@ html {
     font-weight: 400
 }
 
+body {
+    font-family: Roboto, sans-serif;
+    letter-spacing: 1px !important;
+}
+
 .text-secondary, .text-secondary-black, .text-secondary-white {
     font-family: CP, cursive
 }
@@ -32,9 +37,6 @@ html {
     margin: 0 auto;
 }
 
-.nav-link {
-    font-size: 1.4rem;
-}
 
 .maromere-text span {
     background: #000000;
@@ -73,6 +75,7 @@ html {
     text-align: center;
     font-family: Roboto, sans-serif;
     color: #afa58a !important;
+    font-weight: 300!important;
 }
 
 .maromere-icon {
@@ -85,7 +88,6 @@ html {
 }
 
 /*Maro Mera End*/
-
 @media (min-width: 768px) {
     .container-small {
         max-width: 570px;
@@ -133,7 +135,7 @@ button:focus {
 }
 
 .site-logo {
-    width: 280px!important;
+    width: 280px !important;
 }
 
 .carousel {
@@ -170,28 +172,12 @@ button:focus {
     object-fit: cover
 }
 
-.navbar li {
-    padding: 0 10px
-}
-
 .border-bottom {
     border-bottom: 1px solid #b2b2b273 !important
 }
 
-.coming-soon div {
-    width: 100%;
-    height: 100%;
-    background-color: #eaeaea;
-    text-align: center
-}
-
-.coming-soon div span {
-    position: relative;
-    color: #000;
-    float: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+.horizontal div {
+    padding: 15px 40px;
 }
 
 .modal-body header h1, .modal-body header h3 {
@@ -261,7 +247,12 @@ footer {
     margin-top: 7rem;
     padding: 30px;
     background-color: #76871a;
-    width: 100%
+    width: 100%;
+    font-weight: bold;
+}
+
+footer .font-big {
+    font-size: 1.3rem!important;
 }
 
 footer .row {
@@ -374,7 +365,7 @@ footer .row {
 }
 
 .product-detail {
-    padding: 20px 40px;
+    padding: 40px 40px;
     border-left: 1px solid #ebedf2
 }
 
@@ -523,28 +514,79 @@ footer .row {
     margin-bottom: 6rem;
 }
 
+/* Navbar */
+.bg-light {
+    background-color: #ffffff !important;
+}
+
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+.custom-nav {
+    font-family: "CP", cursive !important;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.top-nav {
+    font-size: 0.99rem !important;
+}
+
+.custom-nav i {
+    padding-right: 2px;
+    font-size: 0.95rem;
+}
+
+.custom-nav .nav-item {
+    margin-right: 8px;
+}
+
+.custom-nav .nav-link:hover {
+    color: #5d6e18 !important;
+}
+
+.custom-nav .text-secondary:hover {
+    color: #76871a !important;
+}
+
+.custom-nav .maromera-hover:hover {
+    color: #6e6452 !important;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.custom-nav .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media only screen and (max-width: 768px) {
+
     .site-logo {
-        width: 100px!important;
+        width: 100px !important;
     }
+
     .maromere-product {
         margin-top: 40px
     }
 
     .maromere-header {
         width: 100%;
-        padding: 80px
+        padding: 40px
     }
 
     .maromere-header img {
         width: 100%
     }
 
-    .navbar-nav {
-        padding-bottom: .7rem;
-        margin-bottom: .5rem;
-        border-bottom: 1px solid #b2b2b273
-    }
 
     .modal-body header {
         padding: 10px 10px 10px 95px

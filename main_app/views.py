@@ -45,11 +45,6 @@ class ProductListView(generic.ListView):
     model = Product
     paginate_by = 9
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(ProductListView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        return context
-
 
 class CategoryDetailView(generic.DetailView):
     model = Category
@@ -68,7 +63,6 @@ class CategoryDetailView(generic.DetailView):
         if self.object.name == 'Maro mere':
             context['products'] = Product.objects.filter(category__name='maromere')
             context['slides'] = Slide.objects.filter(maromere=True)
-        context['categories'] = Category.objects.all()
         return context
 
 
@@ -76,12 +70,6 @@ class SubCategoryDetailView(generic.DetailView):
     model = SubCategory
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
-
-    def get_context_data(self, **kwargs):
-        context = super(SubCategoryDetailView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-
-        return context
 
 
 class ProductDetailView(generic.DetailView):
@@ -92,8 +80,3 @@ class ProductDetailView(generic.DetailView):
             return ['maromere_detail.html']
         else:
             return ['main_app/product_detail.html']
-
-    def get_context_data(self, **kwargs):
-        context = super(ProductDetailView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        return context

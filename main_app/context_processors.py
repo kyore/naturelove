@@ -1,4 +1,4 @@
-from main_app.models import Slide
+from main_app.models import Slide, Category
 
 
 def get_slides(request):
@@ -6,6 +6,16 @@ def get_slides(request):
 
     context = {
         'slides': slides
+    }
+
+    return context
+
+
+def get_categories(request):
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories
     }
 
     return context

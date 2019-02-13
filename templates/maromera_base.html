@@ -13,7 +13,7 @@
 
     {% block styles %}{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/ijZ2rDTc.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
     <script>
@@ -37,29 +37,11 @@
 
 <div class="maromere">
     <div class="container container-small">
-        <nav class="navbar navbar-expand navbar-light">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link text-secondary-white font-weight-bold">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'shop' %}" class="nav-link text-secondary-white font-weight-bold">SHOP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'blog:list' %}" class="nav-link text-secondary-white font-weight-bold">BLOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-secondary-white font-weight-bold">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        {% include 'layouts/maromera_navbar.html' %}
 
         <div class="maromere-header">
             <img src="{% static 'fonts/img/maromere_logo.png' %}" alt>
         </div>
-
     </div>
 </div>
 
