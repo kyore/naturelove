@@ -286,19 +286,22 @@ footer .row {
 }
 
 .order {
+    display: flex;
     margin-top: 2rem
 }
 
 .order label {
-    width: 15%
+    width: 15%;
 }
 
 .order input {
+    height: 32px;
     padding: 3px;
     border-radius: 0
 }
 
 .order button {
+    height: 32px;
     border: none;
     background-color: #768432;
     border-radius: 0;
@@ -369,13 +372,21 @@ footer .row {
     border-left: 1px solid #ebedf2
 }
 
+.maromere .product-detail {
+    border: none!important;
+}
+
 .accordion, .card {
     border: none
 }
 
 .product-detail img {
     width: 100% !important;
-    height: auto !important
+    max-height: 200px;
+}
+
+.maromere .product-detail img {
+    max-height: 100%;
 }
 
 .product-detail ul {

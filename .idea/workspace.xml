@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34851793-cfd6-4d1b-83ea-97a09c8ddc23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/ijZ2rDTc.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/ijZ2rDTc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/maromera_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/maromera_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/maromere_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/maromere_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +18,25 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/maromere_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="125">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+              <folding>
+                <element signature="e#1208#1233#0#HTML" expanded="true" />
+                <element signature="n#block#1;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="383" column="27" lean-forward="true" selection-start-line="383" selection-start-column="27" selection-end-line="383" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -39,11 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>content</find>
-      <find>mobile</find>
-      <find>@media</find>
-      <find>.maromere-text h1</find>
-      <find>maromere-header</find>
       <find>video</find>
       <find>.awards</find>
       <find>text</find>
@@ -69,6 +77,11 @@
       <find>navbar</find>
       <find>.about h2</find>
       <find>about h2</find>
+      <find>.order</find>
+      <find>.order`</find>
+      <find>maromere</find>
+      <find>.product-detail</find>
+      <find>.product-detail img</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -110,20 +123,20 @@
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/main_app/models.py" />
         <option value="$PROJECT_DIR$/templates/maromere.html" />
-        <option value="$PROJECT_DIR$/templates/maromere_detail.html" />
         <option value="$PROJECT_DIR$/templates/layouts/brand_list.html" />
         <option value="$PROJECT_DIR$/templates/layouts/maromera_navbar.html" />
-        <option value="$PROJECT_DIR$/templates/maromera_base.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/product_detail.html" />
         <option value="$PROJECT_DIR$/templates/layouts/footer.html" />
-        <option value="$PROJECT_DIR$/static/css/ijZ2rDTc.css" />
         <option value="$PROJECT_DIR$/static/css/style.min.css" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/category_detail.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/subcategory_detail.html" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/product_list.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
         <option value="$PROJECT_DIR$/templates/layouts/navbar.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/maromera_base.html" />
+        <option value="$PROJECT_DIR$/templates/maromere_detail.html" />
+        <option value="$PROJECT_DIR$/static/css/ijZ2rDTc.css" />
       </list>
     </option>
   </component>
@@ -139,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,20 +167,13 @@
             <path>
               <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
               <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="natureoflove" type="b2602c69:ProjectViewProjectNode" />
-              <item name="natureoflove" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,11 +246,13 @@
       <workItem from="1549254464706" duration="8710000" />
       <workItem from="1549934540749" duration="785000" />
       <workItem from="1550031125589" duration="23445000" />
+      <workItem from="1550112917959" duration="237000" />
+      <workItem from="1550225087017" duration="1070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54563000" />
+    <option name="totallyTimeSpent" value="55870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -383,13 +390,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/d.html" />
     <entry file="file://$PROJECT_DIR$/natureoflove/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -489,22 +490,9 @@
     <entry file="file://$PROJECT_DIR$/static/fonts/img/homelogo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/fonts/img/home_logo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/fonts/img/home_logo.jpg" />
     <entry file="file://$PROJECT_DIR$/static/fonts/img/home_logo.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/maromere_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding>
-            <element signature="e#566#593#0#HTML" expanded="true" />
-            <element signature="n#block#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/maromera_navbar.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -520,24 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/maromera_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -576,17 +550,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        <state relative-caret-position="192">
+          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layouts/navbar.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="96">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/maromera_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/maromere_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="e#1208#1233#0#HTML" expanded="true" />
+            <element signature="n#block#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/ijZ2rDTc.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="383" column="27" lean-forward="true" selection-start-line="383" selection-start-column="27" selection-end-line="383" selection-end-column="27" />
         </state>
       </provider>
     </entry>
