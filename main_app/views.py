@@ -62,7 +62,7 @@ class CategoryDetailView(generic.DetailView):
 
         if self.object.name == 'Maro mera':
             context['products'] = Product.objects.filter(category__name='maromera')
-            context['slides'] = Slide.objects.filter(maromera=True)
+            context['slides'] = Slide.objects.filter(maromere=True)
         return context
 
 
