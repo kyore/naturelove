@@ -52,7 +52,7 @@ class CategoryDetailView(generic.DetailView):
     slug_url_kwarg = 'slug'
 
     def get_template_names(self):
-        if self.object.name == 'Maro mere':
+        if self.object.name == 'Maro mera':
             return ['maromere.html']
         else:
             return ['main_app/category_detail.html']
@@ -60,9 +60,9 @@ class CategoryDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(CategoryDetailView, self).get_context_data(**kwargs)
 
-        if self.object.name == 'Maro mere':
-            context['products'] = Product.objects.filter(category__name='maromere')
-            context['slides'] = Slide.objects.filter(maromere=True)
+        if self.object.name == 'Maro mera':
+            context['products'] = Product.objects.filter(category__name='maromera')
+            context['slides'] = Slide.objects.filter(maromera=True)
         return context
 
 
@@ -76,7 +76,7 @@ class ProductDetailView(generic.DetailView):
     model = Product
 
     def get_template_names(self):
-        if self.object.category.parent.name == 'Maro mere':
+        if self.object.category.parent.name == 'Maro mera':
             return ['maromere_detail.html']
         else:
             return ['main_app/product_detail.html']
